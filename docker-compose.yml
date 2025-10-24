@@ -1,0 +1,26 @@
+version: "3.9"
+services:
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_DB: kerana
+      POSTGRES_USER: kerana
+      POSTGRES_PASSWORD: kerana
+    volumes:
+      - ./db/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d:ro
+    ports:
+      - "5432:5432"
+  app:
+    image: php:8.2-apache
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_NAME: kerana
+      DB_USER: kerana
+      DB_PASS: kerana
+    volumes:
+      - ./app:/var/www/html
+    ports:
+      - "8080:80"
+    working_dir: /var/www/html

@@ -1,29 +1,30 @@
-/* Mobile-first minimal CSS (no external lib) */
 :root { --bg:#0b0c10; --card:#111419; --text:#e6e6e6; --muted:#9aa0a6; --brand:#7aa2f7; --danger:#ef4444; --ok:#34d399; }
 * { box-sizing: border-box; }
 body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background: var(--bg); color: var(--text); }
-header { position: sticky; top:0; background: #0c0f14; padding: 12px 16px; border-bottom: 1px solid #1f2430; }
-.brand { font-weight: 700; color: var(--brand); text-decoration: none; }
-main { padding: 16px; }
-h1 { font-size: 20px; margin: 8px 0 16px; }
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px,1fr)); gap: 12px; }
-.card { display: block; padding: 14px; background: var(--card); border: 1px solid #1f2430; border-radius: 14px; text-decoration: none; color: var(--text); }
-.card:hover { border-color: var(--brand); }
-.actions { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; }
-.actions .search { margin-left: auto; display:flex; gap:6px; }
-input, select, textarea { width: 100%; padding: 10px; border-radius: 12px; border: 1px solid #2a2f3b; background: #0f1218; color: var(--text); }
-textarea { resize: vertical; }
-.btn { display:inline-block; padding:10px 12px; background: var(--brand); color:#fff; text-decoration:none; border-radius:12px; border: 1px solid transparent; }
-.btn.ghost { background: transparent; border-color:#2a2f3b; color: var(--text); }
-.btn:hover { filter: brightness(1.1); }
-.table-scroll { overflow-x: auto; border:1px solid #1f2430; border-radius: 12px; }
-table { width:100%; border-collapse: collapse; min-width: 640px; }
-th, td { padding:10px; border-bottom:1px solid #1f2430; text-align:left; white-space: nowrap; }
-thead th { position: sticky; top:0; background:#0f1218; }
-.row-actions a { color: var(--brand); text-decoration: none; }
-.row-actions a.danger { color: var(--danger); }
-.form label { display:block; margin:8px 0; font-size: 14px; color: var(--muted); }
-.form label input, .form label select, .form label textarea { margin-top:6px; }
+header { position: sticky; top:0; background:#0c0f14; padding:12px 16px; border-bottom:1px solid #1f2430; z-index:10; }
+.brand { font-weight:700; color:var(--brand); text-decoration:none; }
+main { padding:16px; }
+h1 { font-size:20px; margin:8px 0 16px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(140px,1fr)); gap:12px; }
+.card { display:block; padding:14px; background:var(--card); border:1px solid #1f2430; border-radius:14px; text-decoration:none; color:var(--text); }
+.card:hover { border-color:var(--brand); }
+.actions { display:flex; gap:8px; align-items:center; margin-bottom:8px; }
+.actions .search { margin-left:auto; display:flex; gap:6px; }
+input, select, textarea { width:100%; padding:12px; border-radius:12px; border:1px solid #2a2f3b; background:#0f1218; color:var(--text); }
+textarea { resize:vertical; }
+.btn { display:inline-block; padding:10px 12px; background:var(--brand); color:#fff; text-decoration:none; border-radius:12px; border:1px solid transparent; }
+.btn.ghost { background:transparent; border-color:#2a2f3b; color:var(--text); }
+.btn:hover { filter:brightness(1.08); }
+.table-scroll { overflow-x:auto; border:1px solid #1f2430; border-radius:12px; }
+table { width:100%; border-collapse:collapse; min-width:680px; }
+th, td { padding:10px; border-bottom:1px solid #1f2430; text-align:left; white-space:nowrap; }
+thead th { position:sticky; top:0; background:#0f1218; }
+.row-actions a { color:var(--brand); text-decoration:none; }
+.row-actions a.danger { color:var(--danger); }
+.form label { display:block; margin:10px 0; font-size:14px; color:var(--muted); }
 .form-actions { display:flex; gap:8px; margin-top:12px; }
+.form-actions.stick { position:sticky; bottom:0; background:linear-gradient(180deg, transparent, #0b0c10 30%); padding-top:8px; }
 .pagination { display:flex; gap:12px; align-items:center; margin-top:10px; }
-footer { padding: 16px; color: var(--muted); text-align: center; }
+footer { padding:16px; color:var(--muted); text-align:center; }
+.flash { padding:10px 12px; border-radius:10px; margin:0 0 12px; border:1px solid #1f2430; background:#0f1218; }
+.flash.ok { border-color:#1d3d33; background:#0f1815; color:#a7f3d0; }
